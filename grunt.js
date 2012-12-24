@@ -26,6 +26,10 @@ module.exports = function(grunt) {
 				src: ['build/li3_filemanager.js'],
 				dest: 'build/li3_filemanager.min.js'
 			}
+		},
+		watch: {
+			files: ['src/*'],
+			tasks: ['test']
 		}
 	});
 	
