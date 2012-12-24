@@ -10,20 +10,31 @@ module.exports = function(grunt) {
 					"	description: <%= pkg.description %> */"
 		},
 		lint: {
-			files: ['src/*.js', 'src/view/*.js']
-		},
-		min: {
-			dist: {
-				src: ['<banner>', 'src/main.js', 'src/*.js', 'src/view/*.js'],
-				dest: '../li3_filemanager.min.js'
-			}
+			files: ['src/*.js']
 		},
 		qunit: {
 			all: ['tests/index.html']
+		},
+		concat: {
+			dist: {
+				src: ['src/main.js', 'src/*.js'],
+				dest: 'build/li3_filemanager.js'
+			}
+		},
+		min: {
+			dist: {
+				src: ['build/li3_filemanager.js'],
+				dest: 'build/li3_filemanager.min.js'
+			}
 		}
 	});
 	
 	// Default tasks
-	grunt.registerTask('default', 'qunit');
-	
+	grunt.registerTask('default', 'test build');
+
+	// Test tasks
+	grunt.registerTask('test', 'lint qunit');
+
+	// Build and minify
+	grunt.registerTask('build', 'concat min');
 };

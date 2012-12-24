@@ -1,8 +1,8 @@
 {
-	"name": "li3_filemanager_js",
-	"version": "1.0.0",
+	"name": "li3_filemanager",
+	"version": "0.1.0",
 	"scripts": {
-		"test": "grunt"
+		"test": "grunt test"
 	},
 	"devDependencies": {
 		"grunt": "0.3.17",
