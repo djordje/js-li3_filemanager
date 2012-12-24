@@ -1,0 +1,13 @@
+{
+	"name": "li3_filemanager_js",
+	"version": "1.0.0",
+	"scripts": {
+		"test": "grunt",
+		"bower": "bower ls"
+	},
+	"devDependencies": {
+		"connect": "2.7.1",
+		"grunt": "0.3.17",
+		"bower": "0.6.8"
+	}
+}
