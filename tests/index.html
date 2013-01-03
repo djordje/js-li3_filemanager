@@ -10,13 +10,18 @@
 	<link rel="stylesheet" type="text/css" href="../vendor/qunit/qunit.css" media="screen" />
 	<script type="text/javascript" src="../vendor/qunit/qunit.js"></script>
 
+	<!-- mustache -->
+	<script type="text/javascript" src="../vendor/mustache/mustache.js"></script>
+
 	<!-- load scripts for testing -->
 	<script type="text/javascript" src="../src/queue.js"></script>
 	<script type="text/javascript" src="../src/url.js"></script>
+	<script type="text/javascript" src="../src/view.js"></script>
 
 	<!-- unit tests -->
 	<script type="text/javascript" src="unit/queue-test.js"></script>
 	<script type="text/javascript" src="unit/url-test.js"></script>
+	<script type="text/javascript" src="unit/view-test.js"></script>
 </head>
 <body>
 	<div>
@@ -25,6 +30,9 @@
 		<h2 id="qunit-userAgent"></h2>
 		<ol id="qunit-tests"></ol>
 		<div id="qunit-fixtures"></div>
+	</div>
+	<div style="display: none;">
+		<div id="test-view"></div>
 	</div>
 </body>
 </html>
