@@ -1,4 +1,6 @@
 {
+	"author":"Djordje Kovacevic <http://djordjekovacevic.com>",
+	"description": "This is JavaScript frontend for li3_filemanager",
 	"dependencies": {
 		"jquery": "1.8.3",
 		"qunit": "1.10.0",
