@@ -1,29 +1,50 @@
 module.exports = function(grunt) {
-	
-	// Concat and minify files
+
 	grunt.initConfig({
 		pkg:'<json:package.json>',
+		cmp: '<json:component.json>',
 		meta: {
-			banner: "/*! <%= pkg.name %> - <%= grunt.template.today('yyyy-mm-dd') %>\n" +
-					"	author: <%= pkg.author %>\n" +
-					"	dependencies: <%= pkg.dependencies %>\n" +
-					"	description: <%= pkg.description %> */"
+			banner: "/* ==========================================================\n" +
+					" * <%= pkg.name %> v<%= pkg.version %>\n" +
+					" * Author: <%= cmp.author %>\n" +
+					" * Description: <%= cmp.description %>\n" +
+					" * ========================================================== */\n",
+			version: "FileManager.VERSION = '<%= pkg.version %>';"
 		},
 		lint: {
-			files: ['src/*.js']
+			files: [
+				'tests/unit/*',
+				'src/queue.js',
+				'src/url.js',
+				'src/actions.js',
+				'src/events.js',
+				'src/view.js',
+				'src/view/*'
+			],
 		},
 		qunit: {
 			all: ['tests/index.html']
 		},
 		concat: {
 			dist: {
-				src: ['src/main.js', 'src/*.js'],
+				src: [
+					'<banner>',
+					'src/intro.js',
+					'<banner:meta.version>',
+					'src/url.js',
+					'src/queue.js',
+					'src/view.js',
+					'src/view/*',
+					'src/actions.js',
+					'src/events.js',
+					'src/outro.js'
+				],
 				dest: 'build/li3_filemanager.js'
 			}
 		},
 		min: {
 			dist: {
-				src: ['build/li3_filemanager.js'],
+				src: ['<banner>', 'build/li3_filemanager.js'],
 				dest: 'build/li3_filemanager.min.js'
 			}
 		},
