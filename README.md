@@ -10,7 +10,7 @@ First clone repo, install node modules and fetch javascript tests dependencies w
 
 	git clone git://github.com/djordje/js-li3_filemanager.git
 	cd js-li3_filemanager
-	npm install & node_modules/.bin/bower install
+	npm install && node_modules/.bin/bower install
 
 So you can run grunt tests from repo root:
 
